@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <h1> Cadastro de Usuário</h1>
-    <p> Email </p>
-    <p> Nome </p>
-    <p> Data de Nascimento </p>
-    <p> Endereço </p>
-    <p> Alguma Neuro Divergência? </p>
-    <p> Alguma Deficiência Física? </p>
-    <p> Comprovação de Renda </p>
+    <div class="container">
+        <h1>Cadastro de usuário</h1>
+        
+        <div class="form-container">
+            <div class="left">
+                <div class="avatar">
+                    <img src="img/cadastro.jpg">
+                </div>
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Nome">
+                <input type="date" placeholder="Data de nascimento">
+                <input type="text" placeholder="Endereço">
+            </div>
+
+            <div class="right">
+                <input type="text" placeholder="Alguma neurodivergência?">
+                <input type="text" placeholder="Alguma deficiência física?">
+                <input type="text" placeholder="Comprovação de renda">
+                <button>Enviar</button>
+            </div>
+        </div>
+    </div>
 </body>
+</html>
