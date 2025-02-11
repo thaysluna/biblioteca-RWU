@@ -4,7 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+    font-family: Arial, sans-serif;
+    background-color: #d6ebe6;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #09332e;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: #f49a73;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style> 
 </head>
 <body>
     <div class="container">
@@ -13,7 +66,7 @@
         <div class="form-container">
             <div class="left">
                 <div class="avatar">
-                    <img src="img/cadastro.jpg">
+                    <img src="user-icon.png" alt="Avatar">
                 </div>
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Nome">
