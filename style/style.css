@@ -1,59 +1,57 @@
 body {
-    background-color: #8ed4f4;
-    color: darkblue;
+    background-color: #8fd4f5;
+    color: hwb(240 2% 67%);
+    
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
-    
 }
 
 header{
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items:center;
+    justify-content:space-between;
+    align-items: center;
+
 }
 
 #title{
     flex-direction: column;
-    line-height: 10px ;
+    line-height: 10px;
+
 }
 
 li{
-    display:inline-block;
+    display: inline-block;
     margin: 20px;
 }
 
 a{
     color:white;
-    
 }
-
 a:hover{
-    color: darkblue;
-    transition:0.3s all;
-
+    color:darkblue;
 }
 
-#inscreva-se-btn{
-    border:2px solid rgb(5, 5, 85);
-    padding: 10px;
-    border-radius: 20px;
+#Inscreva-se-btn{
+    border: 2px solid rgb darkblue;
+    padding:10px;
+    border-radius:15px;
 }
 
-#inscreva-se-btn:hover{
+#Inscreva-se-btn:hover{
     background-color: darkblue;
     color:white;
-
 }
 
 h1{
     font-weight: 200;
+    
 }
 
 main{
-    display:flex;
-    flex-direction: row;
+    display: flex;
+    flex-direction:row;
     margin-top: 50px;
 }
 
@@ -63,47 +61,41 @@ h2{
 }
 
 span{
-    color:rgb(5, 5, 85)
+    color: darkblue;
+    transition:0.3s all;
 }
 
 p{
-    line-height: 20px; 
+    line-height: 20px;
     max-width: 500px;
+
 }
 
 img{
-    width: 100%;
-    height: 120%;
-    margin-top: -100px;
-    position: relative;
-    left: 40px;
-    
+    width: 580;
 }
-
 
 form{
-    display:flex;
     flex-direction: column;
-    width:70%;
+    width: 70%;
 }
 
-form[type="submit"]{
+form [type="submit"]{
     height:50px;
-    width:50%;
-    background-color:rgb(5, 5, 85);
+    width: 50%;
+    background-color: darkblue;
     color:white;
     font-weight: bold;
 }
-
-form[type="submit"]:hover{
-    cursor:pointer;
+form [type="submit"]:hover{
+    cursor: pointer;
 }
 
 input{
-    margin-top:20px;
+    margin-top: 20px;
     height:20px;
-    padding:15px;
+    padding: 15px;
     border-radius: 20px;
     border:none;
-
+    font-size: 15px;
 }
