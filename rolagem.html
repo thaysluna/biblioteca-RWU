@@ -18,17 +18,17 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">início</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
+                      mais...
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">ajudas</a></li>
+                      <li><a class="dropdown-item" href="#">perguntas</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="#">nossas redes sociais</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">
@@ -83,48 +83,11 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <h1 style="text-align: center;">para você:</h1>
+
+
+          <h2>para você:</h2>
           <div class="books row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
         </div>
-      <!-- <div class="container">
-        <div class="card">
-            <h5>Hora da estrela</h5>
-            <p>autora clarice lispecto <br>A Hora da Estrela é um romance de Clarice Lispector que conta a história de Macabéa, uma jovem nordestina que migra para o Rio de Janeiro. A obra aborda temas como a miséria, a opressão, a indiferença social e a dificuldade de adaptação. </p>
-            <button>ver</button>
-        </div>
-        <div class="card">
-            <h5>Harry Potter e a pedra filosofal </h5>
-            <p>conta a história de um menino órfão que descobre ser bruxo e é convidado para estudar em Hogwarts. </p>
-            <button>ver
-            </button>
-        </div>
-      <div class="card">
-        <h5>quem sou eu?</h5>
-        <p>“quem sou eu?”. Eu sou meu nome, o lugar onde nasci, a cor da minha pele, meus pensamentos?
-          Em sua resposta, Bunting expõe alguns dos preconceitos que mais nos têm preocupado atualmente, os de cor, de nacionalidade… e reflete sobre a essência humana. Quem somos nós, pequenos seres nesse imenso universo? O que nos faz iguais e ao mesmo tempo diferentes?
-          O tratamento que ele dá a essa questão, que sempre estará em pauta ao longo de nossa vida, faz com que a obra seja proveitosa para todas as idades.</p>
-        <button>Ver</button>
-    </div>
-    </div>
-    <div class="container">
-      <div class="card">
-          <h5>rita, não grita</h5>
-          <p>Rita Magrela era gritadeira. Tudo era motivo para reclamações e berros. Os amigos se cansaram e ninguém mais convidava Rita para brincar. Aí, descobriu que era hora de deixar para trás aquela mania esquisita de gritar à toa. Só assim ela conseguiria reconquistar seus amigos…</p>
-          <button>Ver</button>
-      </div>
-      <div class="card">
-          <h5>mémoria póstumas de brás cubas</h5>
-          <p>a prosa fragmentária e livre de Memórias póstumas , misturando elegância e abuso, refinamento e humor negro, causou estranheza, inclusive entre a crítica. Com o tempo, no entanto, o defunto autor que dedica sua obra ao verme que primeiro roeu as frias carnes de seu cadáver tornou-se um dos personagens mais populares da nossa literatura. Sua história, uma celebração do nada que foi sua vid</p>
-          <button>Ver</button>
-      </div>
-    <div class="card">
-      <h5>crepúsculo</h5>
-      <p>Isabella Swan chega à nublada e chuvosa cidadezinha de Forks - último lugar onde gostaria de viver. Tenta se adaptar à vida provinciana na qual aparentemente todos se conhecem, lidar com sua constrangedora falta de coordenação motora e se habituar a morar com um pai com quem nunca conviveu. Em seu destino está Edward Cullen.</p>
-      <button>Ver</button>
-  </div>
-  </div>
-      </div> -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script>
       const books = [
@@ -143,10 +106,17 @@
         {
           title: 'quem sou eu?',
           description: '“quem sou eu?”. Eu sou meu nome, o lugar onde nasci, a cor da minha pele, meus pensamentos? Em sua resposta, Bunting expõe alguns dos preconceitos que mais nos têm preocupado atualmente, os de cor, de nacionalidade… e reflete sobre a essência humana. Quem somos nós, pequenos seres nesse imenso universo? O que nos faz iguais e ao mesmo tempo diferentes? O tratamento que ele dá a essa questão, que sempre estará em pauta ao longo de nossa vida, faz com que a obra seja proveitosa para todas as idades.'
-        }
+        },
+        {
+          title: 'Harry Potter e a pedra filosofal',
+          description: 'conta a história de um menino órfão que descobre ser bruxo e é convidado para estudar em Hogwarts.'
+        },
+        {
+          title: 'Hora da estrela',
+          description: 'autora clarice lispecto <br>A Hora da Estrela é um romance de Clarice Lispector que conta a história de Macabéa, uma jovem nordestina que migra para o Rio de Janeiro. A obra aborda temas como a miséria, a opressão, a indiferença social e a dificuldade de adaptação.'
+        },
           
-        
-
+      
       ]
 
       const bookGrid = document.querySelector('.books');

@@ -1,4 +1,4 @@
-/* .destaque{
+.destaque{
     text-align:center
 
 }
@@ -8,7 +8,11 @@ body{
     
 
 }
-hr{
+h2{
+    color:hwb(240 32% 49%);
+}
+
+/*hr{
     background-color: black;
 }
 fieldset{
@@ -47,4 +51,4 @@ nav{
         border: 1px solid #ccc;
         border-radius: 5px;
 
-} */
+}
