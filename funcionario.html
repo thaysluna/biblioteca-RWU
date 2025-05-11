@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,10 +16,12 @@
       <img src="https://img.icons8.com/ios-filled/50/home.png" alt="Home" />
     </div>
     <div class="title">Interface do Funcionário e do Usuário</div>
-    <div class="search-box">
+    <form class="search-box">
       <input type="text" placeholder="Buscar..." />
-      <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="Buscar" />
-    </div>
+      <button type="submit">
+        <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="Buscar" />
+      </button>
+    </form>
   </header>
 
   <section class="profile">
@@ -26,7 +29,9 @@
     <div class="profile-info">
       <div><strong>Nome</strong></div>
       <div>Endereço</div>
-      <button class="edit-button">Editar</button>
+      <form method="get">
+        <button class="edit-button" type="submit">Editar</button>
+      </form>
     </div>
   </section>
 
@@ -38,7 +43,9 @@
         <p>Cod do livro: 00431492</p>
         <p>Empréstimo: 05/04</p>
         <p>Entrega: 26/04</p>
-        <button class="update-button">Atualizar</button>
+        <form method="get">
+          <button class="update-button" type="submit">Atualizar</button>
+        </form>
       </div>
     </div>
 
@@ -49,7 +56,9 @@
         <p>Cod do livro: 00431493</p>
         <p>Empréstimo: 10/04</p>
         <p>Entrega: 30/04</p>
-        <button class="update-button">Atualizar</button>
+        <form method="get">
+          <button class="update-button" type="submit">Atualizar</button>
+        </form>
       </div>
     </div>
 
@@ -60,11 +69,12 @@
         <p>Cod do livro: 00431494</p>
         <p>Empréstimo: 15/04</p>
         <p>Entrega: 05/05</p>
-        <button class="update-button">Atualizar</button>
+        <form method="get">
+          <button class="update-button" type="submit">Atualizar</button>
+        </form>
       </div>
     </div>
   </section>
-
 </body>
 
 </html>
