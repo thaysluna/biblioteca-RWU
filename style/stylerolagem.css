@@ -1,5 +1,5 @@
 .destaque{
-    text-align:center
+    flex-direction: column
 
 }
 body{
@@ -10,45 +10,4 @@ body{
 }
 h2{
     color:hwb(240 32% 49%);
-}
-
-/*hr{
-    background-color: black;
-}
-fieldset{
-    width: 30%; 
-    margin: auto;
-    border: 2px solid #000;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-}
-img{
-    width: 25%;
-    border-radius: 15px;
-    right: 300px;
-    position: absolute;
-    top: 180px;
-}
-.container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-.card {
-    width: 300px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-}
-.card button {
-    margin: 5px;
-}
-nav{
-    height: 40px;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-
 }
