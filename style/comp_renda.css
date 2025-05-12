@@ -8,7 +8,7 @@
   /* Corpo da página */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
+    background-color:  #8fd4f5;
     color: #333;
     padding: 20px;
   }
@@ -50,8 +50,8 @@
   
   /* Botão */
   button {
-    background-color:  #f49a73;
-    color: black;
+    background-color: darkblue ;
+    color: white;
     border: none;
     padding: 12px 20px;
     border-radius: 5px;
