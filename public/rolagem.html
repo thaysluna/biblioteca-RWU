@@ -168,7 +168,7 @@ Ideal para fãs de sustos, tensão e tramas que gelam a espinha.
       // ]
 
       async function loadBooks() {
-        const response = await fetch('/books');
+        const response = await fetch('/api/books');
         const books = await response.json();
         const bookGrid = document.querySelector('.books');
   
