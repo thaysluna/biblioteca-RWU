@@ -28,9 +28,9 @@ router.get('/books', async (req, res) => {
   try {
     const { title } = req.query;
 
-    const books = await books.read('title', title);
+    const result = await books.read('title', title);
 
-    res.json(books);
+    res.json(result);
   } catch (error) {
     throw new HTTPError('Unable to read books', 400);
   }

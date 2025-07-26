@@ -167,36 +167,36 @@ Ideal para fãs de sustos, tensão e tramas que gelam a espinha.
       
       // ]
 
-      async function loadBooks() {
-        const response = await fetch('/api/books');
-        const books = await response.json();
-        const bookGrid = document.querySelector('.books');
+      //async function loadBooks() {
+      //  const response = await fetch('/api/books');
+        //const books = await response.json();
+        //const bookGrid = document.querySelector('.books');
   
-        for (const book of books) {
-          const view = `
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <img src="img/rolagem imagem/icone.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">${book.title}</h5>
-                    <h6 class="card-autor">${book.author}</h6>
-                    <p class="card-text">${book.description}</p>
-                    <a href="#" class="btn btn-primary">mais informações</a>
-                  </div>
-                </div>
+        //for (const book of books) {
+         // const view = `
+          //  <div class="col">
+            //  <div class="card">
+              //  <div class="card-body">
+                //  <img src="img/rolagem imagem/icone.jpeg" class="card-img-top" alt="...">
+                  //<div class="card-body">
+                    //<h5 class="card-title">${book.title}</h5>
+                    //<h6 class="card-autor">${book.author}</h6>
+                    //<p class="card-text">${book.description}</p>
+                    //<a href="#" class="btn btn-primary">mais informações</a>
+                  //</div>
+                //</div>
                   
-              </div>
-            </div>
-          `;
+              //</div>
+            //</div>
+          //`;
   
-          bookGrid.insertAdjacentHTML('beforeend', view)
+         // bookGrid.insertAdjacentHTML('beforeend', view)
         }
       }
 
-      loadBooks();
+      //loadBooks();
 
-    </script>
+    //</script>
     
     
     </body>
