@@ -1,76 +1,81 @@
-import { v4 as uuidv4 } from 'uuid';
-import { books } from '../database/data.js';
-
-function create({ title, author, description }) {
-  const id = uuidv4();
-
-  const book = { id, title, author, description };
-
+import prisma from '../database/database.js';
+ 
+async function create({ title, author, description }) {
+  
   if (title && author && description) {
-    books.push(book);
-    return book;
+    const createdInvestment = await prisma.investment.create({
+      data: { name, value },
+    });
+ 
+    return createdInvestment;
   } else {
-    throw new Error('Unable to create book');
+    throw new Error('Unable to create investment');
   }
 }
 
-function read(field, value) {
-  if (field && value) {
-    const filteredBooks = books.filter((book) =>
-      book[field].toLowerCase().includes(value.toLowerCase())
-    );
 
-    return filteredBooks;
+async function read(where) {
+  
+  if (where? .name) {
+    where.name = {
+      contains: where.name,
+    };
   }
-
-  return books;
+ 
+  const investments = await prisma.investment.findMany({ where });
+ 
+  if (investments.length === 1 && where) {
+    return investments[0];
+  }
+ 
+  return investments;
 }
 
-function readById(id) {
+
+  async function readById(id) {
+  
   if (id) {
-    const index = books.findIndex((book) => book.id === id);
-
-    if (!books[index]) {
-      throw new Error('Book not found');
-    }
-
-    return books[index];
+   const investment = await prisma.investment.findUnique({
+      where: {
+        id,
+      },
+    });
+ 
+    return investment;
   } else {
-    throw new Error('Unable to find book');
+    throw new Error('Unable to find investment');
   }
 }
 
-function update({ id, title, author, description }) {
+
+async function update({ id, title, author, description }) {
+ 
   if (id && title && author && description) {
-    const newBook = { id, title, author, description };
-
-    const index = books.findIndex((book) => book.id === id);
-
-    if (!books[index]) {
-      throw new Error('Book not found');
-    }
-
-    books[index] = newBook;
-
-    return newBook;
+    const updatedInvestment = await prisma.investment.update({
+      where: {
+        id,
+      },
+      data: { title, author, description },
+    });
+ 
+    return updatedInvestment;
   } else {
-    throw new Error('Unable to update book');
+    throw new Error('Unable to update investment');
   }
 }
 
-function remove(id) {
-  if (id) {
-    const index = books.findIndex((book) => book.id === id);
 
-    if (index === -1) {
-      throw new Error('Book not found');
-    }
-
-    books.splice(index, 1);
+async function remove(id) {
+   if (id) {
+    await prisma.investment.delete({
+      where: {
+        id,
+      },
+    });
 
     return true;
   } else {
-    throw new Error('Book not found');
+    throw new Error('Unable to remove investment');
   }
 }
 

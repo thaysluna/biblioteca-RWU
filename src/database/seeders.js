@@ -7,10 +7,16 @@ async function up() {
  
   const seed = JSON.parse(readFileSync(file));
  
-  for (const books of seed.books) {
-    await Books.create(books);
-  }
+await prisma.investment.createMany({
+    data: seed.investments,
+  });
 }
- 
-export default { up };
- 
+main()
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
