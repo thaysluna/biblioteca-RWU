@@ -1,14 +1,16 @@
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
-import Books from '../models/books.js';
+import { PrismaClient } from '@prisma/client';
  
-async function up() {
-  const file = resolve('src', 'database', 'seeders.json');
+const prisma = new PrismaClient();
+ 
+async function main() {
+  const file = resolve('prisma', 'seeders.json');
  
   const seed = JSON.parse(readFileSync(file));
  
-await prisma.investment.createMany({
-    data: seed.investments,
+  await prisma.livro.createMany({
+    data: seed.books,
   });
 }
 main()
@@ -20,3 +22,4 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
+ 

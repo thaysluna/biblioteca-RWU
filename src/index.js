@@ -2,9 +2,6 @@ import 'express-async-errors';
 import express from 'express';
 import morgan from 'morgan';
 import router from './routes.js';
-import Seed from './database/seeders.js';
-await Seed.up(); // chama antes do server.listen()
-
 
 const server = express();
 
