@@ -3,45 +3,45 @@ import prisma from '../database/database.js';
 async function create({ title, author, description }) {
   
   if (title && author && description) {
-    const createdInvestment = await prisma.investment.create({
-      data: { name, value },
+    const createdLivro = await prisma.livro.create({
+      data: { title, author, description },
     });
  
-    return createdInvestment;
+    return createdLivro;
   } else {
-    throw new Error('Unable to create investment');
+    throw new Error('Unable to create livro');
   }
 }
 
 
 async function read(where) {
   
-  if (where? .name) {
-    where.name = {
-      contains: where.name,
+  if (where? .title) {
+    where.title = {
+      contains: where.title,
     };
   }
  
-  const investments = await prisma.investment.findMany({ where });
+  const livros = await prisma.livro.findMany({ where });
  
-  if (investments.length === 1 && where) {
-    return investments[0];
+  if (livros.length === 1 && where) {
+    return livros[0];
   }
  
-  return investments;
+  return livros;
 }
 
 
   async function readById(id) {
   
   if (id) {
-   const investment = await prisma.investment.findUnique({
+   const livro = await prisma.livro.findUnique({
       where: {
         id,
       },
     });
  
-    return investment;
+    return livro;
   } else {
     throw new Error('Unable to find investment');
   }
@@ -51,14 +51,14 @@ async function read(where) {
 async function update({ id, title, author, description }) {
  
   if (id && title && author && description) {
-    const updatedInvestment = await prisma.investment.update({
+    const updatedLIvro = await prisma.livro.update({
       where: {
         id,
       },
       data: { title, author, description },
     });
  
-    return updatedInvestment;
+    return updateLivro;
   } else {
     throw new Error('Unable to update investment');
   }
@@ -67,7 +67,7 @@ async function update({ id, title, author, description }) {
 
 async function remove(id) {
    if (id) {
-    await prisma.investment.delete({
+    await prisma.livro.delete({
       where: {
         id,
       },
