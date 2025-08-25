@@ -16,7 +16,7 @@ async function create({ title, author, description }) {
 
 async function read(where) {
   
-  if (where? .title) {
+  if (where?.title) {
     where.title = {
       contains: where.title,
     };
