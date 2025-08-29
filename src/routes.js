@@ -73,6 +73,16 @@ router.delete('/books/:id', async (req, res) => {
     throw new HTTPError('Unable to remove book', 400);
   }
 });
+router.get('/rl', async (req, res) => {
+  try {
+
+    const result = await books.readall();
+
+    res.json(result);
+  } catch (error) {
+    throw new HTTPError('Unable to read books', 400);
+  }
+});
 
 // 404 handler
 router.use((req, res, next) => {
@@ -87,6 +97,7 @@ router.use((err, req, res, next) => {
     res.status(500).json({ message: 'Something broke!' });
   }
 });
+
 
 export default router;
 

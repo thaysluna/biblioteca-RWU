@@ -1,0 +1,24 @@
+{
+    "books":    [
+        {
+            "title": "Dom Quixote",
+            "author": "Miguel de Cervantes",
+            "description": "A saga do fidalgo que enlouquece de tanto ler romances de cavalaria e decide tornar-se cavaleiro andante, confrontando realidade e ideal."
+        },
+        {
+            "title": "Grande Sertão: Veredas",
+            "author": "João Guimarães Rosa",
+            "description": "Narrativa labiríntica em primeira pessoa que acompanha Riobaldo pelos sertões de Minas e Bahia, entre guerras de jagunços, destino e amor."
+        },
+        {
+            "title": "1984",
+            "author": "George Orwell",
+            "description": "Distopia clássica sobre vigilância, controle de informação e totalitarismo, onde Winston Smith luta por liberdade sob o olhar do Grande Irmão."
+        },
+        {
+            "title": "Ensaio sobre a Cegueira",
+            "author": "José Saramago",
+            "description": "Uma epidemia de cegueira branca expõe a fragilidade das instituições e a força — e a crueldade — do comportamento humano."
+        }
+    ]
+}

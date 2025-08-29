@@ -77,6 +77,10 @@ async function remove(id) {
   } else {
     throw new Error('Unable to remove investment');
   }
+  
+}
+async function readall() {
+  return await prisma.livro.findMany();
 }
 
-export default { create, read, readById, update, remove };
+export default { create, read, readById, update, remove, readall };

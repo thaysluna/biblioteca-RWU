@@ -1,203 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>biblioteca RWU</title>
-        <meta charset="uft-8">
-        <meta neme = "viewport" content = "width=device-width,initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style/stylerolagem.css">
-        <script src="script.js"defer></script>
-    </head>
-    <body>
-        <header data-bs-theme="light">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">início</a>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">perfil</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      mais...
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ajudas</a></li>
-                      <li><a class="dropdown-item" href="#">perguntas</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">nossas redes sociais</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">configurações</a>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="pesquisa" aria-label="pesquisa">
-                  <button class="btn btn-outline-success" type="submit">pesquisar</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-          </header>
-        <div class="container">
-          <br>
-          <h1 class="destaque">Leitura <br> Ativa</h1>
-          <br>
-          <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img/rolagem imagem/padrão.jpeg" class="d-block w-100" alt="livro classico" width="50" height="500">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>clássicos brasileiros</h5>
-                  <p>As grandes obras da literatura brasileira em um só lugar.
-Este catálogo reúne os livros que moldaram o pensamento, a cultura e a identidade do Brasil. De romances que exploram os dilemas humanos, como Dom Casmurro e O Cortiço, a narrativas líricas e ousadas de autores como Clarice Lispector e Guimarães Rosa. Uma coletânea indispensável para quem deseja conhecer — ou redescobrir — a riqueza da literatura nacional.
+  <head>
+    <title>Biblioteca RWU</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/stylerolagem.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+    <header data-bs-theme="light">
+      <nav>
+    <div class="logo">📚 RWU</div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="#">Perfil</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Configurações</a>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Pesquisar livros...">
+      <button>Pesquisar</button>
+    </div>
+  </nav>
+    </header>
 
-</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="img/rolagem imagem/padrão.jpeg" class="d-block w-100" alt="livro infantil" width="50" height="500">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>infantis</h5>
-                  <p>Diversão, imaginação e aprendizado em um só lugar!
-Nosso catálogo infantil foi feito especialmente para encantar crianças de todas as idades. Aqui você encontra histórias mágicas, personagens cativantes, jogos educativos e muito conteúdo cheio de cores, alegria e criatividade. Um universo seguro e divertido onde aprender brincando é a principal aventura!</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="img/rolagem imagem/padrão.jpeg" class="d-block w-100" alt="livro infantil" width="50" height="500">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>suspense/terro</h5>
-                  <p>Prepare-se para o medo.
-Nosso catálogo de terror traz uma seleção arrepiante de histórias sombrias ,livros macabros e criaturas que desafiam a lógica. Do suspense psicológico ao horror sobrenatural, mergulhe em mundos onde o desconhecido reina, o perigo é constante e o medo é real.
-Ideal para fãs de sustos, tensão e tramas que gelam a espinha.
-
-</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
-
-          <h2>para você:</h2>
-          <div class="books row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"></div>
-        </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <script>
-      // const books = [
-      //   {
-      //     title: 'crepúsculo',
-      //     autor:'...',
-      //     description: 'Isabella Swan chega à nublada e chuvosa cidadezinha de Forks - último lugar onde gostaria de viver. Tenta se adaptar à vida provinciana na qual aparentemente todos se conhecem, lidar com sua constrangedora falta de coordenação motora e se habituar a morar com um pai com quem nunca conviveu. Em seu destino está Edward Cullen.'
-      //   },
-      //   {
-      //     title: 'mémoria póstumas de brás cubas',
-      //     autor:'Machado de Assis',
-      //     description: 'a prosa fragmentária e livre de Memórias póstumas , misturando elegância e abuso, refinamento e humor negro, causou estranheza, inclusive entre a crítica. Com o tempo, no entanto, o defunto autor que dedica sua obra ao verme que primeiro roeu as frias carnes de seu cadáver tornou-se um dos personagens mais populares da nossa literatura. Sua história, uma celebração do nada que foi sua vida'
-      //   },
-      //   {
-      //     title: 'rita, não grita',
-      //     autor:'...',
-      //     description: 'Rita Magrela era gritadeira. Tudo era motivo para reclamações e berros. Os amigos se cansaram e ninguém mais convidava Rita para brincar. Aí, descobriu que era hora de deixar para trás aquela mania esquisita de gritar à toa. Só assim ela conseguiria reconquistar seus amigos…'
-      //   },
-      //   {
-      //     title: 'quem sou eu?',
-      //     autor:'...',
-      //     description: '“quem sou eu?”. Eu sou meu nome, o lugar onde nasci, a cor da minha pele, meus pensamentos? Em sua resposta, Bunting expõe alguns dos preconceitos que mais nos têm preocupado atualmente, os de cor, de nacionalidade… e reflete sobre a essência humana. Quem somos nós, pequenos seres nesse imenso universo? O que nos faz iguais e ao mesmo tempo diferentes? O tratamento que ele dá a essa questão, que sempre estará em pauta ao longo de nossa vida, faz com que a obra seja proveitosa para todas as idades.'
-      //   },
-      //   {
-      //     title: 'Harry Potter e a pedra filosofal',
-      //     autor:'...',
-      //     description: 'conta a história de um menino órfão que descobre ser bruxo e é convidado para estudar em Hogwarts.'
-      //   },
-      //   {
-      //     title: 'Hora da estrela',
-      //     autor:'Clarice lispecto',
-      //     description: 'A Hora da Estrela é um romance de Clarice Lispector que conta a história de Macabéa, uma jovem nordestina que migra para o Rio de Janeiro. A obra aborda temas como a miséria, a opressão, a indiferença social e a dificuldade de adaptação.'
-      //   },
-      //   {
-      //     title: 'Dom Casmurro',
-      //     autor:'Machado de Assis',
-      //     description: 'Um dos maiores clássicos da literatura brasileira. Bentinho narra sua história de amor com Capitu, marcada por ciúmes e dúvida. Seria ela culpada ou inocente? Uma leitura envolvente e provocadora.'
-      //   },
-      //   {
-      //     title: 'O Cortiço',
-      //     autor:'Aluísio Azevedo',
-      //     description: 'Um retrato intenso da vida num cortiço carioca no século XIX, explorando desigualdade, preconceito e convivência social. Uma obra naturalista poderosa.'
-      //   },
-      //   {
-      //     title: 'Grande Sertão: Veredas',
-      //     autor:'Guimarães Rosa',
-      //     description: 'Uma jornada pelo sertão brasileiro cheia de poesia, filosofia e aventura. Riobaldo, um jagunço, relembra suas batalhas e dilemas com o bem e o mal.'
-      //   },
-      //   {
-      //     title: 'Meu Pé de Laranja Lima',
-      //     autor:'José Mauro de Vasconcelos',
-      //     description: 'A história tocante de Zezé, um menino sensível e imaginativo, que encontra consolo em seu amigo: um pé de laranja lima. Um clássico amado por leitores de todas as idades.'
-      //   },
-      //   {
-      //     title: 'Iracema ',
-      //     autor:'Graciliano Ramos',
-      //     description: 'Uma família sertaneja tenta sobreviver à seca. Com linguagem enxuta e impactante, é uma denúncia da miséria e da luta pela dignidade no sertão nordestino.'
-      //   },
-      //   {
-      //     title: 'O Sapo Bocarrão',
-      //     autor:'Keith Faulkner',
-      //     description: 'Um sapo metido que adora contar o que come... até encontrar um animal bem maior e levar um susto! Um livro interativo e engraçado para os pequenos.'
-      //   },
-          
+    <div class="container">
       
-      // ]
 
-      //async function loadBooks() {
-      //  const response = await fetch('/api/books');
-        //const books = await response.json();
-        //const bookGrid = document.querySelector('.books');
-  
-        //for (const book of books) {
-         // const view = `
-          //  <div class="col">
-            //  <div class="card">
-              //  <div class="card-body">
-                //  <img src="img/rolagem imagem/icone.jpeg" class="card-img-top" alt="...">
-                  //<div class="card-body">
-                    //<h5 class="card-title">${book.title}</h5>
-                    //<h6 class="card-autor">${book.author}</h6>
-                    //<p class="card-text">${book.description}</p>
-                    //<a href="#" class="btn btn-primary">mais informações</a>
-                  //</div>
-                //</div>
-                  
-              //</div>
-            //</div>
-          //`;
-  
-         // bookGrid.insertAdjacentHTML('beforeend', view)
-        }
-      }
+      <!-- Carrossel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-      //loadBooks();
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/rolagem imagem/ca-brasil.jpg" class="d-block w-100 carousel-img" alt="livro classico">
+      <div class="carousel-caption d-none d-md-block caption-bg">
+        <h5>Clássicos brasileiros</h5>
+        <p>As grandes obras da literatura brasileira em um só lugar. Este catálogo reúne os livros que moldaram o pensamento, a cultura e a identidade do Brasil.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/rolagem imagem/ca-infantis.jpg" class="d-block w-100 carousel-img" alt="livro infantil">
+      <div class="carousel-caption d-none d-md-block caption-bg">
+        <h5>Infantis</h5>
+        <p>Nosso catálogo infantil foi feito especialmente para encantar crianças de todas as idades.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/rolagem imagem/ca-terror.jpg" class="d-block w-100 carousel-img" alt="livro suspense">
+      <div class="carousel-caption d-none d-md-block caption-bg">
+        <h5>Suspense/Terror</h5>
+        <p>Prepare-se para o medo! Nosso catálogo de terror traz histórias sombrias, suspense psicológico e horror sobrenatural.</p>
+      </div>
+    </div>
+  </div>
 
-    //</script>
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js" defer></script>
+
+      <h2>Para você:</h2>
+      <div class="books row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"></div>
+    </div>
     
+
     
-    </body>
+  </body>
 </html>

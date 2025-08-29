@@ -1,6 +1,6 @@
 async function loadBooks() {
   try {
-    const response = await fetch('/api/books');
+    const response = await fetch('/api/rl');
     const books = await response.json();
 
     if (!Array.isArray(books)) throw new Error('Resposta inválida da API');

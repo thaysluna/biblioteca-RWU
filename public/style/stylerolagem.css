@@ -10,5 +10,134 @@ body{
 
 }
 h2{
-    color:hwb(240 32% 49%);
+    color:#fff;
+    font-family: 'Poppins', sans-serif;
 }
+/* Navbar */
+    nav {
+        font-family: 'Poppins', sans-serif;
+      background: #0f172a; /* azul bem escuro */
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    nav .menu a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500; /* Deixa um pouco mais grosso */
+        text-decoration: none; /* Remove sublinhado */
+        color: #fff; /* Cor branca */
+        margin: 0 10px; /* Espaço entre os links */
+        transition: color 0.3s;
+}
+
+    nav a {
+      color: #e2e8f0;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav .menu a:hover {
+        color: #00aaff; /* Cor ao passar o mouse */
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .search-box button {
+      background: #00008b;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .search-box button:hover {
+      background: #010160;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      background: linear-gradient(135deg, #3b82f6, #1e40af);
+      color: white;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+      font-weight: 400;
+    }
+    .carousel {
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .carousel-img {
+    height: 500px;
+    object-fit: cover; /* Mantém proporção sem distorcer */
+  }
+
+  /* Fundo translúcido para legenda */
+  .caption-bg {
+    background: rgba(15, 23, 42, 0.65); /* azul escuro translúcido */
+    border-radius: 12px;
+    padding: 15px;
+    animation: fadeInUp 1s ease;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00008b; 
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+    color: #f1f5f9;
+  }
+
+  /* Animação suave */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }

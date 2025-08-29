@@ -12,10 +12,10 @@ datasource db {
 }
 
 model Livro {
-        id Int @id
-        title String
-        author String
-        description String
-        @@map(name: "livro")
+  id Int @id @default(autoincrement())
+  title String
+  author String
+  description String
+  @@map(name: "livro")
 }
 
