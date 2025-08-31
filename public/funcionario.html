@@ -5,78 +5,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface do Funcionário e do Usuário</title>
-  <link rel="stylesheet" href="/style/funcionario.css">
+  <title>Interface do Funcionário</title>
+  <link rel="stylesheet" href="style/funcionario.css">
 </head>
 
 <body>
-  <header>
-    <div class="icon-group">
-      <img src="https://img.icons8.com/ios-glyphs/30/settings.png" alt="Configurações" />
-      <img src="https://img.icons8.com/ios-filled/50/home.png" alt="Home" />
+  <nav>
+    <div class="logo">📚 RWU</div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="#">Perfil</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Configurações</a>
     </div>
-    <div class="title">Interface do Funcionário e do Usuário</div>
-    <form class="search-box">
-      <input type="text" placeholder="Buscar..." />
-      <button type="submit">
-        <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="Buscar" />
-      </button>
+    <form class="search-box" method="get">
+      <input type="text" placeholder="Pesquisar livros...">
+      <button type="submit">Pesquisar</button>
     </form>
-  </header>
+  </nav>
 
-  <section class="profile">
-    <div class="profile-icon">👤</div>
-    <div class="profile-info">
-      <div><strong>Nome</strong></div>
-      <div>Endereço</div>
-      <form method="get">
-        <button class="edit-button" type="submit">Editar</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="cards-container">
-    <div class="card">
-      <img src="https://img.icons8.com/ios/250/book.png" alt="Capa do Livro" />
-      <div class="card-content">
-        <p><strong>Dom Casmurro</strong></p>
-        <p>Cod do livro: 00431492</p>
-        <p>Empréstimo: 05/04</p>
-        <p>Entrega: 26/04</p>
-        <form method="get">
-          <button class="update-button" type="submit">Atualizar</button>
+  <main>
+    <section class="profile">
+      <div class="profile-icon" aria-label="Ícone de perfil">👤</div>
+      <div class="profile-info">
+        <div><strong>Nome</strong></div>
+        <div>Endereço</div>
+        <form>
+          <button class="edit-button" type="button">Editar</button>
         </form>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <img src="https://img.icons8.com/ios/250/book.png" alt="Capa do Livro" />
-      <div class="card-content">
-        <p><strong>O Alienista</strong></p>
-        <p>Cod do livro: 00431493</p>
-        <p>Empréstimo: 10/04</p>
-        <p>Entrega: 30/04</p>
-        <form method="get">
-          <button class="update-button" type="submit">Atualizar</button>
-        </form>
+    <section class="cards-container">
+      <div class="card">
+        <img src="https://img.icons8.com/ios/250/book.png" alt="Capa do livro Dom Casmurro" />
+        <div class="card-content">
+          <p><strong>Dom Casmurro</strong></p>
+          <p>Cod do livro: 00431492</p>
+          <p>Empréstimo: 05/04</p>
+          <p>Entrega: 26/04</p>
+          <form>
+            <button class="update-button" type="button">Atualizar</button>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://img.icons8.com/ios/250/book.png" alt="Capa do Livro" />
-      <div class="card-content">
-        <p><strong>Memórias Póstumas</strong></p>
-        <p>Cod do livro: 00431494</p>
-        <p>Empréstimo: 15/04</p>
-        <p>Entrega: 05/05</p>
-        <form method="get">
-          <button class="update-button" type="submit">Atualizar</button>
-        </form>
+      <div class="card">
+        <img src="https://img.icons8.com/ios/250/book.png" alt="Capa do livro O Alienista" />
+        <div class="card-content">
+          <p><strong>O Alienista</strong></p>
+          <p>Cod do livro: 00431493</p>
+          <p>Empréstimo: 10/04</p>
+          <p>Entrega: 30/04</p>
+          <form>
+            <button class="update-button" type="button">Atualizar</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div class="card">
+        <img src="https://img.icons8.com/ios/250/book.png" alt="Capa do livro Memórias Póstumas" />
+        <div class="card-content">
+          <p><strong>Memórias Póstumas</strong></p>
+          <p>Cod do livro: 00431494</p>
+          <p>Empréstimo: 15/04</p>
+          <p>Entrega: 05/05</p>
+          <form>
+            <button class="update-button" type="button">Atualizar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
-
-
