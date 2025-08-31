@@ -58,7 +58,7 @@ async function update({ id, title, author, description }) {
       data: { title, author, description },
     });
  
-    return updateLivro;
+    return updatedLivro;
   } else {
     throw new Error('Unable to update investment');
   }
