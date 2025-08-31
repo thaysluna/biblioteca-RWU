@@ -24,3 +24,35 @@ model Livro {
   @@map(name: "livro")
 }
 
+
+model User {
+  id             String    @id @default(uuid())
+  email          String    @unique
+  nome           String
+  cpf            String    @unique
+  dataNascimento DateTime
+  endereco       String
+  password       String
+  rendas         Renda[]
+  @@map(name: "user")
+}
+
+
+enum TipoDocumento {
+  CONTRACHEQUE
+  IMPOSTO_RENDA
+  EXTRATO_BANCARIO
+}
+
+model Renda {
+  id             String         @id @default(uuid())
+  email          String         @unique     // <-- adicionado
+  rendaMensal    Float
+  tipoDocumento  TipoDocumento
+  documentoUrl   String
+  userId         String
+  user           User           @relation(fields: [userId], references: [id])
+  @@map(name: "renda")
+}
+
+
