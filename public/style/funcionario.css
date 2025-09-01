@@ -221,3 +221,203 @@ nav .menu a:hover {
   background: #010160;
 }
 
+/* Botão Adicionar Livro */
+.add-book-section {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.add-book-btn {
+  background: #00a86b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0px 4px 15px rgba(0, 168, 107, 0.3);
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.add-book-btn:hover {
+  background: #008f5b;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 20px rgba(0, 168, 107, 0.4);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 30px;
+  border: none;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #0f172a;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00aaff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.btn-submit,
+.btn-cancel {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.btn-submit {
+  background: #00a86b;
+  color: #fff;
+}
+
+.btn-submit:hover {
+  background: #008f5b;
+}
+
+.btn-cancel {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-cancel:hover {
+  background: #cbd5e1;
+}
+
+/* Success Modal */
+.success-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.success-content h2 {
+  color: #00a86b;
+  margin-bottom: 10px;
+}
+
+.success-content p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.btn-ok {
+  background: #00a86b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.btn-ok:hover {
+  background: #008f5b;
+}
+

@@ -1,10 +1,17 @@
 import prisma from '../database/database.js';
  
-async function create({ title, author, description }) {
+async function create({ title, author, description, codLivro, dataEmprestimo, dataEntrega }) {
   
   if (title && author && description) {
+    const data = { title, author, description };
+    
+    // Adicionar campos opcionais se fornecidos
+    if (codLivro) data.codLivro = codLivro;
+    if (dataEmprestimo) data.dataEmprestimo = new Date(dataEmprestimo);
+    if (dataEntrega) data.dataEntrega = new Date(dataEntrega);
+    
     const createdLivro = await prisma.livro.create({
-      data: { title, author, description },
+      data,
     });
  
     return createdLivro;
@@ -48,14 +55,21 @@ async function read(where) {
 }
 
 
-async function update({ id, title, author, description }) {
+async function update({ id, title, author, description, codLivro, dataEmprestimo, dataEntrega }) {
  
   if (id && title && author && description) {
-    const updatedLIvro = await prisma.livro.update({
+    const data = { title, author, description };
+    
+    // Adicionar campos opcionais se fornecidos
+    if (codLivro !== undefined) data.codLivro = codLivro;
+    if (dataEmprestimo !== undefined) data.dataEmprestimo = dataEmprestimo ? new Date(dataEmprestimo) : null;
+    if (dataEntrega !== undefined) data.dataEntrega = dataEntrega ? new Date(dataEntrega) : null;
+    
+    const updatedLivro = await prisma.livro.update({
       where: {
         id,
       },
-      data: { title, author, description },
+      data,
     });
  
     return updatedLivro;

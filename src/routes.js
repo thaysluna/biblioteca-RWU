@@ -17,7 +17,7 @@ router.post('/books', async (req, res) => {
 
     const createdBook = await books.create(book);
 
-    return res.json(createdbook);
+    return res.json(createdBook);
   } catch (error) {
     throw new HTTPError('Unable to create book', 400);
   }
@@ -55,7 +55,7 @@ router.put('/books/:id', async (req, res) => {
     const book = req.body;
     const id = req.params.id;
 
-    const updatedbook = await books.update({ ...book, id });
+    const updatedBook = await books.update({ ...book, id });
 
     return res.json(updatedBook);
   } catch (error) {
