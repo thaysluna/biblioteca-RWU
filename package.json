@@ -4,6 +4,7 @@
     "scripts": {
         "start": "node src/index.js",
         "dev": "node --watch src/index.js",
+        "db:init": "npx prisma generate && npx prisma db push && node scripts/init-db.js",
         "db:reload": "npm run db:drop && npm run db:load",
         "db:load": "node src/database/load.js",
         "db:drop": "rm src/database/db.sqlite"

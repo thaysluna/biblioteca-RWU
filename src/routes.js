@@ -28,7 +28,9 @@ router.get('/books', async (req, res) => {
   try {
     const { title } = req.query;
 
-    const result = await books.read('title', title);
+    // Passar um objeto where ou vazio se não houver filtro
+    const where = title ? { title } : {};
+    const result = await books.read(where);
 
     res.json(result);
   } catch (error) {
