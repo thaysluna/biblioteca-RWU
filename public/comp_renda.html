@@ -10,23 +10,28 @@
 
     <div class="container">
         <h1>Comprovação de Renda</h1>
-        <form>
+
+        <form id="rendaForm">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
           
           <label for="renda">Renda mensal (R$)</label>
-          <input type="number" id="renda" name="renda">
+          <input type="number" id="renda" name="rendaMensal">
       
           <label for="tipo-doc">Tipo de Documento</label>
-          <select id="tipo-doc" name="tipo-doc">
+          <select id="tipo-doc" name="tipoDocumento">
             <option>Contracheque</option>
             <option>Imposto de Renda</option>
             <option>Extrato Bancário</option>
           </select>
       
           <label for="arquivo">Anexar Documento</label>
-          <input type="file" id="arquivo" name="arquivo">
+          <input type="file" id="arquivo" name="documentoUrl">
       
           <button type="submit">Enviar Comprovação</button>
         </form>
       </div>
-      
+  
+      <script src="renda.js"></script>
 
