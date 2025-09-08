@@ -2,6 +2,10 @@ import express from 'express';
 import books from './models/books.js';
 import users from './models/user.js'; // renomeado para lowercase: mais comum em módulos
 import rendas from './models/renda.js';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+
+import { isAuthenticated } from './middleware/auth.js';
 
 class HTTPError extends Error {
   constructor(message, code) {
