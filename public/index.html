@@ -1,64 +1,15 @@
-<!--<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="./style/style.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
-        integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
-        crossorigin="anonymous"></script>
-    <script>
-  // Funções de validação
-      function validarNome(nome) {
-      return nome.trim().length >= 2;
-      }
-
-      function validarEmail(email) {
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return regex.test(email.trim());
-      }
-
-  // Pegando valores e validando
-      const nome = document.getElementById("usuario").value;
-      const email = document.getElementById("email").value;
-
-      if (!validarNome(nome)) {
-      alert("Por favor, insira um nome válido com pelo menos 2 caracteres.");
-      }  else if (!validarEmail(email)) {
-      alert("Por favor, insira um email válido.");
-      } else {
-         window.location.href = "rolagem.html";
-      
-    // A  }
-      };
-      ;//
-
-  
-     </script>
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="src/index.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="./style/style.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-  
-</head>
-
-
-
- 
- 
-    <title>Biblioteca- RWU </title>
+  <title>Biblioteca - RWU </title>
 </head>
 
 <body>
@@ -69,22 +20,11 @@
         </div>
 
         <ul>
-            <a href="cadastro.html">
-                <li>Cadastre-se</li>
-            </a>
-            <a href="#">
-                <li>Serviços</li>
-            </a>
-            <a href="#">
-                <li>Sobre</li>
-            </a>
-            <a href="#" >
-                <li>Contato</li>
-            </a>
-            <a href="#" id="Inscreva-se-btn">
-                <li> Já tem uma conta?</li>
-            </a>
-
+            <a href="cadastro.html"><li>Cadastre-se</li></a>
+            <a href="#"><li>Serviços</li></a>
+            <a href="#"><li>Sobre</li></a>
+            <a href="#" ><li>Contato</li></a>
+            <a href="funcionario.html" id="Inscreva-se-btn"><li> É funcionário?</li></a>
         </ul>
 
     </header>
@@ -101,186 +41,51 @@
             </p>
             <form id="meuFormulario">
                 <input type="text" id="usuario" placeholder="Nome">
-                <input type="email" id="email" placeholder="E-mail">
+                <input type="password" id="senha" placeholder="Digite sua senha">
                 <input type="submit" value="Enviar">
-            </form id="meuFormulario">
-            <script>
+            </form>
+        </aside>
+
+        <div class="carrossel-scroll container my-4">
+         <div class="scroll-wrapper d-flex overflow-auto">
+           <img src="/img/imagem_telainicial.jpg" class="img-item me-3" alt="Imagem 1">
+           <img src="/img/imagem_telainicial.jpg" class="img-item me-3" alt="Imagem 2">
+           <img src="/img/imagem_telainicial.jpg" class="img-item me-3" alt="Imagem 3">
+         </div>
+        </div>
+  </main>
+  <script>
     // Validação de nome
     function validarNome(nome) {
-      return nome.trim().length >= 2;
-    }
+    return nome.trim().length >= 2;
+     }
 
-    // Validação de email
-    function validarEmail(email) {
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return regex.test(email.trim());
+    // Validação de senha
+    function validarSenha(senha) {
+    return senha.trim().length >= 6; // mínimo de 6 caracteres
     }
 
     // Espera o DOM carregar
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("meuFormulario");
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault(); // impede envio padrão do formulário
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // impede envio padrão do formulário
 
-        const nome = document.getElementById("usuario").value;
-        const email = document.getElementById("email").value;
+      const nome = document.getElementById("usuario").value;
+      const senha = document.getElementById("senha").value;
 
-        if (!validarNome(nome)) {
-          alert("Por favor, insira um nome válido com pelo menos 2 caracteres.");
-        } else if (!validarEmail(email)) {
-          alert("Por favor, insira um email válido.");
-        } else {
-          // Redireciona para rolagem.html
-          window.location.href = "rolagem.html";
-        }
+      if (!validarNome(nome)) {
+        alert("Por favor, insira um nome válido com pelo menos 2 caracteres.");
+      } else if (!validarSenha(senha)) {
+        alert("A senha deve ter pelo menos 6 caracteres.");
+      } else {
+        // Redireciona para outra página
+        window.location.href = "rolagem.html";
+      }
       });
-    });
-            </script>
-
-        </aside>
-        
-
-      <div class="d-flex justify-content-center">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-  <div class="carousel-inner"  style="width: 100%;">
-    <div class="carousel-item active">
-      <img src="/img/imagem_telainicial.jpg" class="d-block   w-100"  alt="Imagem 1">
-    </div>
-    <div class="carousel-item">
-      <img src="/img/imagem_telainicial.jpg" class="d-block  w-100" alt="Imagem 2">
-    </div>
-    <div class="carousel-item">
-      <img src="/img/imagem_telainicial.jpg" class="d-block  w-100" alt="Imagem 3">
-    </div>
-  </div>
-</div>
-
-    </main>
-
-
-</body>
-
-</html> 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="./style/style.css" rel="stylesheet" />
-
-  <!-- Bootstrap JS e Popper.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
-  <title>Biblioteca - RWU</title>
-</head>
-
-<body>
-  <header>
-    <div id="title">
-      <h2>RWU - Gênios </h2>
-      <h2>do Futuro</h2>
-      <!--<h1> Inscreva - se</h1>
-      <h1> agora </h1>-->
-
-      
-    </div>
-
-    <ul>
-      <a href="cadastro.html"><li>Cadastre-se</li></a>
-      <a href="#"><li>Serviços</li></a>
-      <a href="#"><li>Sobre</li></a>
-      <a href="#"><li>Contato</li></a>
-      <a href="#" id="Inscreva-se-btn"><li>Já tem uma conta?</li></a>
-    </ul>
-  </header>
-
-  <main>
-    <aside>
-      <!--<h2><span>Inscreva-se agora</span></h2>
-      <h2>RWU - Gênios </h2>
-      <h2>do Futuro</h2>-->
-      <p>
-        Seja um leitor. A leitura estimula o raciocínio, melhora o vocabulário,
-        aprimora a capacidade interpretativa, além de proporcionar ao leitor um
-        conhecimento amplo e diversificado sobre vários assuntos.
-      </p>
-
-      <!-- Formulário com ID correto -->
-      <form id="meuFormulario">
-        <input type="text" id="usuario" placeholder="Nome" />
-        <input type="email" id="email" placeholder="E-mail" />
-        <input type="submit" value="Enviar" />
-      </form>
-
-      <!-- Script de validação -->
-      <script>
-        // Função para validar nome (mínimo 2 caracteres)
-        function validarNome(nome) {
-          return nome.trim().length >= 2;
-        }
-
-        // Função para validar e-mail com regex
-        function validarEmail(email) {
-          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return regex.test(email.trim());
-        }
-
-        // Aguarda o DOM estar pronto
-        document.addEventListener("DOMContentLoaded", function () {
-          const form = document.getElementById("meuFormulario");
-
-          form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Impede envio padrão
-
-            const nome = document.getElementById("usuario").value;
-            const email = document.getElementById("email").value;
-
-            if (!validarNome(nome)) {
-              alert("Por favor, insira um nome válido com pelo menos 2 caracteres.");
-            } else if (!validarEmail(email)) {
-              alert("Por favor, insira um email válido.");
-            } else {
-              //  redireciona
-              window.location.href = "rolagem.html";
-            }
-          });
-        });
-      </script>
-    </aside> 
-    <div class="carrossel-scroll container my-4">
-  <div class="scroll-wrapper d-flex overflow-auto">
-    <img src="/img/imagem_telainicial.jpg" class="img-item me-3" alt="Imagem 1">
-    <img src="/img/imagem_telainicial.jpg" class="img-item me-3" alt="Imagem 2">
-    <img src="/img/imagem_telainicial.jpg" class="img-item me-3" alt="Imagem 3">
-    <!-- Adicione mais imagens se quiser -->
-  </div>
-    </div>
-
-<style>
-  .scroll-wrapper {
-    height: 500px; /* Altura da área visível do carrossel */
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-
-  .img-item {
-    width: 400px; /* Largura fixa da imagem */
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    border-radius: 10px;
-    user-select: none; /* evita seleção ao arrastar */
-  }
-</style>
-
-
-  </main>
+         });
+  </script>
 </body>
 
 </html>
