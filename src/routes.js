@@ -20,7 +20,7 @@ const router = express.Router();
 // ─── BOOK ROUTES ─────────────────────────────────────────────
 //
 
-router.post('/books', async (req, res, next) => {
+router.post('/books', idAutenticated, async (req, res, next) => {
   try {
     // const book = req.body;
 
@@ -32,7 +32,7 @@ router.post('/books', async (req, res, next) => {
   }
 });
 
-router.get('/books', async (req, res, next) => {
+router.get('/books', idAutenticated, async (req, res, next) => {
   try {
     const { title } = req.query;
 
@@ -47,7 +47,7 @@ router.get('/books', async (req, res, next) => {
   }
 });
 
-router.get('/books/:id', async (req, res, next) => {
+router.get('/books/:id', idAutenticated, async (req, res, next) => {
   try {
     const book = await books.readById(req.params.id);
     res.json(book);
@@ -56,7 +56,7 @@ router.get('/books/:id', async (req, res, next) => {
   }
 });
 
-router.put('/books/:id', async (req, res, next) => {
+router.put('/books/:id', idAutenticated, async (req, res, next) => {
   try {
     // const book = req.body;
     // const id = req.params.id;
@@ -70,7 +70,7 @@ router.put('/books/:id', async (req, res, next) => {
   }
 });
 
-router.delete('/books/:id', async (req, res, next) => {
+router.delete('/books/:id', idAutenticated, async (req, res, next) => {
   try {
     const success = await books.remove(req.params.id);
     if (success) {
@@ -83,7 +83,7 @@ router.delete('/books/:id', async (req, res, next) => {
   }
 });
 
-router.get('/books-all', async (req, res, next) => {
+router.get('/books-all', idAutenticated, async (req, res, next) => {
   try {
     const result = await books.readall();
     res.json(result);
