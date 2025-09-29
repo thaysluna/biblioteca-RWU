@@ -23,7 +23,27 @@
       <input type="text" placeholder="Pesquisar livros...">
       <button>Pesquisar</button>
     </div>
-  </nav>
+
+     <div class="dropdown">            
+            <div              
+                class="d-flex justify-content-center align-items-center rounded-circle bg-dark ms-2 text-white"              
+                style="width: 1.5rem; height: 1.5rem"              
+                data-bs-toggle="dropdown"              
+                aria-expanded="false"            
+            >              
+                <span class="iconify" data-icon="mdi:account"></span>
+            </div>            
+            <ul class="dropdown-menu dropdown-menu-end">              
+                <li>                
+                    <h5 id="user-name" class="dropdown-header"></h5> </li>              
+                <li>                
+                    <a class="dropdown-item" href="#" onclick="signout()">Sair</a>
+                </li>            
+            </ul>          
+        </div>
+        </div>
+    
+ </nav>
     </header>
 
     <div class="container">
@@ -74,7 +94,9 @@
   </button>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js" defer></script>
+
+<script type="module"
+<script src="./script.js" defer></script>
 
       <h2>Para você:</h2>
       <div class="books row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"></div>
