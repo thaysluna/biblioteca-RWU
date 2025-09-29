@@ -1,6 +1,6 @@
-import API from './services/api.js';
-import Auth from './lib/auth.js';
-import { formatCurrency, formatDate } from './lib/format.js';
+import API from './js/services/api.js';
+import Auth from './js/lib/auth.js';
+import { formatCurrency, formatDate } from './js/lib/format.js';
 
 // ==========================================================
 // 2. FUNÇÕES DE CARREGAMENTO E AUTENTICAÇÃO

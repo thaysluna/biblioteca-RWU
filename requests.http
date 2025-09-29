@@ -6,6 +6,7 @@
 
 
 ### 1. Usuários: Cadastro (POST /users)
+
 POST {{host}}/users
 Content-Type: application/json
 
@@ -85,7 +86,7 @@ Authorization: Bearer {{token}}
 
 ---
 
-## 8. Livros: Atualizar (PUT /books/:id)
+### 8. Livros: Atualizar (PUT /books/:id)
 # Rota protegida por 'isAuthenticated'
 PUT {{host}}/books/{{createdBookId}}
 Authorization: Bearer {{token}}
@@ -98,7 +99,7 @@ Content-Type: application/json
 }
 
 
-## 11. Limpeza: Deletar Livro (DELETE /books/:id)
+### 11. Limpeza: Deletar Livro (DELETE /books/:id)
 # Rota protegida por 'isAuthenticated'
 DELETE {{host}}/books/{{createdBookId}}
 Authorization: Bearer {{token}}
