@@ -215,6 +215,44 @@ router.delete('/rendas/:id', async (req, res, next) => {
   }
 });
 
+router.get('/users/me', isAuthenticated, async (req, res) => {
+  try {
+    const userId = req.userId;
+ 
+    const user = await User.readById(userId);
+ 
+    delete user.password;
+ 
+    return res.json(user);
+  } catch (error) {
+    throw new HTTPError('Unable to find user', 400);
+  }
+});
+
+router.post('/signin', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+ 
+    const { id: userId, password: hash } = await User.read({ email });
+ 
+    const match = await bcrypt.compare(password, hash);
+ 
+    if (match) {
+      const token = jwt.sign(
+        { userId },
+        process.env.JWT_SECRET,
+        { expiresIn: 3600000 } // 1h
+      );
+ 
+      return res.json({ auth: true, token });
+    } else {
+      throw new Error('User not found');
+    }
+  } catch (error) {
+    res.status(401).json({ error: 'User not found' });
+  }
+});
+
 // --- 404 handler e Error handler (como antes) ---
 
 router.use((req, res) => {

@@ -1,5 +1,107 @@
-@host=http://127.0.0.1:3000
+### Configuração de Variáveis Globais
+@host = http://127.0.0.1:3000
+# Variável para armazenar o token JWT após o login
+@token = {{signin.response.body.$.token}}
 
-###
 
-GET {{host}}/books
+
+### 1. Usuários: Cadastro (POST /users)
+POST {{host}}/users
+Content-Type: application/json
+
+{
+  "name": " Letícia",
+  "email": "leticia@email.com",
+  "password": "12345678"
+}
+
+### Signin 401
+ 
+# @name signin
+POST {{host}}/signin
+Content-Type: application/json
+ 
+{
+  "email": "leticia@email.com",
+  "password": "321"
+}
+---
+
+### 2. Autenticação: Login (POST /signin)
+# Usa o email/senha do usuário criado acima para obter o token
+POST {{host}}/signin
+Content-Type: application/json
+
+{
+  "email": "leticia@email.com",
+  "password": "12345678"
+}
+
+---
+
+### 3. Usuários: Obter Usuário Autenticado (GET /users/me)
+# Rota protegida por 'isAuthenticated'
+GET {{host}}/users/me
+Authorization: Bearer {{token}}
+
+---
+
+## 4. Livros: Criar Livro (POST /books)
+# Rota protegida por 'isAuthenticated'
+POST {{host}}/books
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "{{bookTitle}}",
+  "author": "Douglas Adams",
+  "publicationYear": 1979
+}
+
+> {%
+  client.global.set("createdBookId", response.body.id);
+%}
+
+---
+
+## 5. Livros: Listar Todos (GET /books-all)
+# Rota protegida por 'isAuthenticated'
+GET {{host}}/books-all
+Authorization: Bearer {{token}}
+
+---
+
+## 6. Livros: Busca por Título (GET /books?title=...)
+# Rota protegida por 'isAuthenticated'
+GET {{host}}/books?title={{bookTitle}}
+Authorization: Bearer {{token}}
+
+---
+
+## 7. Livros: Obter por ID (GET /books/:id)
+# Rota protegida por 'isAuthenticated'
+GET {{host}}/books/{{createdBookId}}
+Authorization: Bearer {{token}}
+
+---
+
+## 8. Livros: Atualizar (PUT /books/:id)
+# Rota protegida por 'isAuthenticated'
+PUT {{host}}/books/{{createdBookId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "{{bookTitle}} - Revisado",
+  "author": "Douglas Adams",
+  "publicationYear": 1980
+}
+
+
+## 11. Limpeza: Deletar Livro (DELETE /books/:id)
+# Rota protegida por 'isAuthenticated'
+DELETE {{host}}/books/{{createdBookId}}
+Authorization: Bearer {{token}}
+
+---
+
