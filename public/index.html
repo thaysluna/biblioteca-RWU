@@ -53,38 +53,7 @@
          </div>
         </div>
   </main>
-  <script>
-    // Validação de nome
-    function validarNome(nome) {
-    return nome.trim().length >= 2;
-     }
 
-    // Validação de senha
-    function validarSenha(senha) {
-    return senha.trim().length >= 6; // mínimo de 6 caracteres
-    }
-
-    // Espera o DOM carregar
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("meuFormulario");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // impede envio padrão do formulário
-
-      const nome = document.getElementById("usuario").value;
-      const senha = document.getElementById("senha").value;
-
-      if (!validarNome(nome)) {
-        alert("Por favor, insira um nome válido com pelo menos 2 caracteres.");
-      } else if (!validarSenha(senha)) {
-        alert("A senha deve ter pelo menos 6 caracteres.");
-      } else {
-        // Redireciona para outra página
-        window.location.href = "rolagem.html";
-      }
-      });
-         });
-  </script>
   <script src="./js/signin.js" type="module"></script>
 </body>
 
