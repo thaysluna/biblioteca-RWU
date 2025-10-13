@@ -38,9 +38,9 @@
                 interpretativa, além de proporcionar ao leitor um conhecimento amplo e diversificado sobre vários
                 assuntos.
             </p>
-            <form id="meuFormulario">
-                <input type="text" id="usuario" placeholder="Nome">
-                <input type="password" id="senha" placeholder="Digite sua senha">
+            <form id="meuFormulario" onsubmit="handleSubmit(event)">
+                <input type="text" id="usuario" name="usuario" placeholder="Nome">
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
                 <input type="submit" value="Enviar">
             </form>
         </aside>
