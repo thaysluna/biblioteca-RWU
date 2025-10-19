@@ -23,7 +23,16 @@ server.use(express.json());
 
 server.use('/api', router);
 
-server.use(express.static('public'));
+server.use((req, res, next) => {
+    // Se a requisição for POST, PUT, DELETE, etc., 
+    // e já passou pela rota '/api', não deve tentar servir estáticos.
+    // Se a requisição for GET, tentamos servir os estáticos.
+    if (req.method === 'GET' || req.method === 'HEAD') {
+        return express.static('public')(req, res, next);
+    }
+    // Se for outro método (POST), e não for rota da API, retorna erro ou next
+    next(); 
+});
 
 server.get('/', (req, res) => {
   res.redirect('/signup.html');

@@ -7,13 +7,9 @@ window.handleSubmit = handleSubmit;
  
 async function handleSubmit(event) {
   event.preventDefault();
-  alert("Função handleSubmit acionada!");
  
   const user = Object.fromEntries(new FormData(form));
 
-  debugger;
-  
- 
  try {
     // 1. Tenta fazer login. Se falhar na API, ele vai direto para o 'catch'.
     const { token } = await API.create('/signin', user, false); 

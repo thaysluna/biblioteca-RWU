@@ -229,11 +229,19 @@ router.get('/users/me', isAuthenticated, async (req, res) => {
   }
 });
 
+
 router.post('/signin', async (req, res) => {
   try {
     const { email, password } = req.body;
  
     const { id: userId, password: hash } = await User.read({ email });
+
+// 🛑 Adicione estes logs no seu servidor!
+    console.log('--- DEBUG DE LOGIN ---');
+    console.log('Email do formulário:', email); 
+    console.log('Hash da senha lido do BD:', hash);
+    console.log('-----------------------');
+
  
     const match = await bcrypt.compare(password, hash);
  
@@ -252,7 +260,6 @@ router.post('/signin', async (req, res) => {
     res.status(401).json({ error: 'User not found' });
   }
 });
-
 // --- 404 handler e Error handler (como antes) ---
 
 router.use((req, res) => {

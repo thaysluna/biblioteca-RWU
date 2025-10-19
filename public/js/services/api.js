@@ -1,6 +1,7 @@
 import Auth from '../lib/auth.js';
  
-const domain = '/api';
+// public/js/services/api.js
+const domain = 'https://friendly-orbit-v6q9vqjvvrg7cpr5-3000.app.github.dev/api';
  
 async function create(resource, data, auth = true) {
   const url = `${domain}${resource}`;
