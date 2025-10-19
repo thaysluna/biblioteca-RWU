@@ -236,13 +236,17 @@ router.post('/signin', async (req, res) => {
  
     const { id: userId, password: hash } = await User.read({ email });
 
-// 🛑 Adicione estes logs no seu servidor!
+    // 2. VERIFICAÇÃO DE E-MAIL (Se não encontrou, lança erro)
+    if (!user || !user.password) {
+        throw new Error('User not found in database'); 
+    }
+    
+    // 3. LOG (Finalmente veremos se o hash está vindo)
     console.log('--- DEBUG DE LOGIN ---');
     console.log('Email do formulário:', email); 
-    console.log('Hash da senha lido do BD:', hash);
+    console.log('Hash da senha lido do BD:', user.password); // Acessa o hash diretamente
     console.log('-----------------------');
 
- 
     const match = await bcrypt.compare(password, hash);
  
     if (match) {
