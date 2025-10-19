@@ -4,8 +4,10 @@ import users from './models/user.js'; // renomeado para lowercase: mais comum em
 import rendas from './models/renda.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import { z } from 'zod';
 
 import { isAuthenticated } from './middleware/auth.js';
+import { validate } from './middleware/validate.js';
 
 class HTTPError extends Error {
   constructor(message, code) {
