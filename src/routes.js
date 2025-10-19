@@ -233,8 +233,18 @@ router.get('/users/me', isAuthenticated, async (req, res) => {
 router.post('/signin', async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    // 🛑 Adicione este log ANTES DA CHAMADA DO BANCO DE DADOS
+    console.log('--- DEBUG 1: Requisição Recebida ---');
+    console.log('Email do formulário:', email); 
+    console.log('------------------------------------');
  
     const { id: userId, password: hash } = await User.read({ email });
+
+    // 🛑 Adicione este log DEPOIS DA CHAMADA DO BANCO DE DADOS
+    console.log('--- DEBUG 2: Resposta do Banco Recebida ---');
+    console.log('Objeto User retornado:', user);
+    console.log('-------------------------------------------');
 
     // 2. VERIFICAÇÃO DE E-MAIL (Se não encontrou, lança erro)
     if (!user || !user.password) {
