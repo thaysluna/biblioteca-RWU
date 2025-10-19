@@ -7,15 +7,27 @@ window.handleSubmit = handleSubmit;
  
 async function handleSubmit(event) {
   event.preventDefault();
+  alert("Função handleSubmit acionada!");
  
   const user = Object.fromEntries(new FormData(form));
+
+  debugger;
+  
  
-  const { auth, token } = await API.create('/signin', user, false);
- 
-  if (auth) {
+ try {
+    // 1. Tenta fazer login. Se falhar na API, ele vai direto para o 'catch'.
+    const { token } = await API.create('/signin', user, false); 
+    
+    // 2. Se chegou aqui, o login foi SUCESSO (Status 2xx)!
     Auth.signin(token);
-  } else {
-    console.log('Error no login');
+    
+    // 3. Redireciona
+    window.location.href = 'rolagem.html'; 
+
+  } catch (error) {
+    // 4. Captura a falha de login, de rede, ou a falta do token.
+    console.error('Erro no login:', error.message);
+    // 💡 Adicione feedback para o usuário
+    alert('Erro: Credenciais inválidas ou falha na comunicação com o servidor.'); 
   }
 }
- 

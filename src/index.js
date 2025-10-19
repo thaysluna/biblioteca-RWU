@@ -21,13 +21,14 @@ server.use(
 
 server.use(express.json());
 
+server.use('/api', router);
+
 server.use(express.static('public'));
 
 server.get('/', (req, res) => {
   res.redirect('/signup.html');
 });
 
-server.use('/api', router);
 
 // Middleware de erro (importante com express-async-errors)
 server.use((err, req, res, next) => {
