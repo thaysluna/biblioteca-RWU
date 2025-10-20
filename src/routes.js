@@ -256,23 +256,22 @@ router.post('/signin', async (req, res) => {
     console.log('Email do formulário:', email); 
     console.log('------------------------------------');
  
-    const { id: userId, password: hash } = await User.read({ email });
+    const { id: userId, password: hash } = await users.read({ email });
 
     // 🛑 Adicione este log DEPOIS DA CHAMADA DO BANCO DE DADOS
-    console.log('--- DEBUG 2: Resposta do Banco Recebida ---');
-    console.log('Objeto User retornado:', user);
-    console.log('-------------------------------------------');
+    // console.log('--- DEBUG 2: Resposta do Banco Recebida ---');
+    // console.log('-------------------------------------------');
 
     // 2. VERIFICAÇÃO DE E-MAIL (Se não encontrou, lança erro)
-    if (!user || !user.password) {
-        throw new Error('User not found in database'); 
-    }
+    // if (!user || !user.password) {
+    //     throw new Error('User not found in database'); 
+    // }
     
     // 3. LOG (Finalmente veremos se o hash está vindo)
-    console.log('--- DEBUG DE LOGIN ---');
-    console.log('Email do formulário:', email); 
-    console.log('Hash da senha lido do BD:', user.password); // Acessa o hash diretamente
-    console.log('-----------------------');
+    // console.log('--- DEBUG DE LOGIN ---');
+    // console.log('Email do formulário:', email); 
+    // console.log('Hash da senha lido do BD:', user.password); // Acessa o hash diretamente
+    // console.log('-----------------------');
 
     const match = await bcrypt.compare(password, hash);
  
