@@ -40,3 +40,4 @@ document.getElementById('userForm').addEventListener('submit', async (e) => {
     alert(error.message);
   }
 });
+
