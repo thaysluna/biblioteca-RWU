@@ -98,7 +98,22 @@ router.get('/books-all', isAuthenticated, async (req, res, next) => {
 // ─── USER ROUTES ─────────────────────────────────────────────
 //
 
-router.post('/users', async (req, res, next) => {
+router.post(
+  '/users',
+  validate(
+    z.object({
+      body: z.object({
+        email: z.string().email(),
+        nome: z.string(),
+        cpf: z.string().min(11),
+        dataNascimento: z.string(),
+        endereco: z.string(),
+        password: z.string().min(6),
+      }),
+    })
+  ), 
+   
+  async (req, res, next) => {
   try {
     const createdUser = await users.create(req.body);
     res.status(201).json(createdUser);
