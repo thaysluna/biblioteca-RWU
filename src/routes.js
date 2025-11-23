@@ -8,6 +8,8 @@ import { z } from 'zod';
 
 import { isAuthenticated } from './middleware/auth.js';
 import { validate } from './middleware/validate.js';
+import SendMail from './services/SendMail.js';
+import user from './models/user.js';
 
 class HTTPError extends Error {
   constructor(message, code) {
@@ -116,6 +118,7 @@ router.post(
   async (req, res, next) => {
   try {
     const createdUser = await users.create(req.body);
+    await SendMail.createNewUser(user.email);
     res.status(201).json(createdUser);
   } catch (error) {
     next(new HTTPError('Unable to create user', 400));
