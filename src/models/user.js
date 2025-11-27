@@ -30,7 +30,16 @@ async function create({ nome, cpf, email, dataNascimento, endereco, password }) 
 }
 
 async function read(where = {}) {
-  const users = await prisma.user.findMany({ where });
+  const users = await prisma.user.findMany({ where,
+    include: {
+      image: {
+        select: {
+          path: true,
+        },
+      },
+    },
+   });
+   
   if (users.length === 1 && where) {
     return users[0];
   }
@@ -44,7 +53,16 @@ async function readById(id) {
   }
 
   const user = await prisma.user.findUnique({
-    where: { id },
+    where: { id,
+
+     },
+     include: {
+      image: {
+        select: {
+          path: true,
+        },
+      },
+     },
   });
 
   if (!user) {

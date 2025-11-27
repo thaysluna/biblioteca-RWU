@@ -7,12 +7,15 @@
 
 ### 1. Usuários: Cadastro (POST /users)
 
-POST {{host}}/users
+POST {{host}}/api/users
 Content-Type: application/json
 
 {
-  "name": " Letícia",
-  "email": "leticia@email.com",
+  "nome": "Letícia",
+  "email": "leticiaaaaa@email.com",
+  "cpf": "12345678905",
+  "dataNascimento": "1990-05-15",
+  "endereco": "Rua Exemplo, 123",
   "password": "12345678"
 }
 

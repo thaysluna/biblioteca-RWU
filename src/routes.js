@@ -5,9 +5,11 @@ import rendas from './models/renda.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import { z } from 'zod';
+import multer from 'multer';
 
 import { isAuthenticated } from './middleware/auth.js';
 import { validate } from './middleware/validate.js';
+import uploadConfig from './config/multer.js';
 import SendMail from './services/SendMail.js';
 import user from './models/user.js';
 
@@ -118,7 +120,7 @@ router.post(
   async (req, res, next) => {
   try {
     const createdUser = await users.create(req.body);
-    await SendMail.createNewUser(user.email);
+    await SendMail.createNewUser(createdUser.email);
     res.status(201).json(createdUser);
   } catch (error) {
     next(new HTTPError('Unable to create user', 400));
@@ -307,5 +309,51 @@ router.use((err, req, res, next) => {
     res.status(500).json({ message: 'Something broke!' });
   }
 });
+
+router.post(
+  '/users/image',
+  isAuthenticated,
+  multer(uploadConfig).single('image'),
+  async (req, res) => {
+    try {
+      const userId = req.userId;
+ 
+      if (req.file) {
+        const path = `/imgs/profile/${req.file.filename}`;
+ 
+        await Image.create({ userId, path });
+ 
+        res.sendStatus(201);
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      throw new HTTPError('Unable to create image', 400);
+    }
+  }
+);
+ 
+router.put(
+  '/users/image',
+  isAuthenticated,
+  multer(uploadConfig).single('image'),
+  async (req, res) => {
+    try {
+      const userId = req.userId;
+ 
+      if (req.file) {
+        const path = `/imgs/profile/${req.file.filename}`;
+ 
+        const image = await Image.update({ userId, path });
+ 
+        res.json(image);
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      throw new HTTPError('Unable to create image', 400);
+    }
+  }
+);
 
 export default router;

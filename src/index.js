@@ -21,6 +21,8 @@ server.use(
 
 server.use(express.json());
 
+server.use(express.urlencoded({ extended: true }));
+
 server.use('/api', router);
 
 server.use((req, res, next) => {
