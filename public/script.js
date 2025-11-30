@@ -26,18 +26,14 @@ window.signout = Auth.signout;
 // Função para buscar os livros e renderizá-los
 async function loadBooks() {
     try {
-        // Requisição para buscar os dados dos livros
-        const response = await fetch('/api/books-all');
-        
-        if (!response.ok) {
-            throw new Error(`Erro HTTP: ${response.status}`);
-        }
+        // Requisição para buscar os dados dos livros (usa API.read para incluir token)
+        const books = await API.read('/books-all');
 
-        const books = await response.json();
-
-        if (!Array.isArray(books)) {
+        if (!books || !Array.isArray(books)) {
             throw new Error('Resposta inválida da API: Esperava-se um array de livros.');
         }
+
+        
 
         const bookGrid = document.querySelector('.books');
         

@@ -1,0 +1,52 @@
+.icon:hover {
+  cursor: pointer;
+  color: #00000082
+}
+body{
+    background-color: #8ed4f4;
+    font-family:Arial, Helvetica, sans-serif;
+    color: hwb(240 2% 67%);
+    
+
+}
+h2{
+    color:#fff;
+    font-family: 'Poppins', sans-serif;
+}
+/* Navbar */
+    nav {
+        font-family: 'Poppins', sans-serif;
+      background: #0f172a; /* azul bem escuro */
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    nav .menu a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500; /* Deixa um pouco mais grosso */
+        text-decoration: none; /* Remove sublinhado */
+        color: #fff; /* Cor branca */
+        margin: 0 10px; /* Espaço entre os links */
+        transition: color 0.3s;
+}
+
+    nav a {
+      color: #e2e8f0;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav .menu a:hover {
+        color: #00aaff; /* Cor ao passar o mouse */
+    }

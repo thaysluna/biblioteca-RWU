@@ -23,33 +23,14 @@ server.use(express.json());
 
 server.use(express.urlencoded({ extended: true }));
 
-server.use('/api', router);
-
-server.use((req, res, next) => {
-    // Se a requisição for POST, PUT, DELETE, etc., 
-    // e já passou pela rota '/api', não deve tentar servir estáticos.
-    // Se a requisição for GET, tentamos servir os estáticos.
-    if (req.method === 'GET' || req.method === 'HEAD') {
-        return express.static('public')(req, res, next);
-    }
-    // Se for outro método (POST), e não for rota da API, retorna erro ou next
-    next(); 
-});
-
+server.use(express.static('public'));
+ 
 server.get('/', (req, res) => {
-  res.redirect('/signup.html');
+  res.redirect('/cadastro.html');
 });
-
-
-// Middleware de erro (importante com express-async-errors)
-server.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: 'Erro interno do servidor' });
-});
-
+ 
+server.use('/api', router);
+ 
 server.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
-
- 
- 

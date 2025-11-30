@@ -14,8 +14,6 @@
       <nav>
     <div class="logo">📚 RWU</div>
     <div class="menu">
-      <a href="index.html">Início</a>
-      <a href="#">Perfil</a>
       <a href="#">Catálogo</a>
       <a href="#">Configurações</a>
     </div>
@@ -24,23 +22,33 @@
       <button>Pesquisar</button>
     </div>
 
-     <div class="dropdown">            
-            <div              
-                class="d-flex justify-content-center align-items-center rounded-circle bg-dark ms-2 text-white"              
-                style="width: 1.5rem; height: 1.5rem"              
-                data-bs-toggle="dropdown"              
-                aria-expanded="false"            
-            >              
-                <span class="iconify" data-icon="mdi:account"></span>
-            </div>            
-            <ul class="dropdown-menu dropdown-menu-end">              
-                <li>                
-                    <h5 id="user-name" class="dropdown-header"></h5> </li>              
-                <li>                
-                    <a class="dropdown-item" href="#" onclick="signout()">Sair</a>
-                </li>            
-            </ul>          
-        </div>
+    <div class="dropdown">
+            <div
+              class="d-flex justify-content-center align-items-center rounded-circle bg-dark ms-2 text-white"
+              style="width: 1.5rem; height: 1.5rem"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                id="dropdown-avatar"
+                src="/img/profile/avatar.png"
+                alt="Foto de Perfil"
+                width="30px"
+                class="border border-secondary-subtle border-4 rounded-circle"
+              />
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <h5 id="user-name" class="dropdown-header"></h5>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/perfil.html">Perfil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="index.html" onclick="signout()">Sair</a>
+              </li>
+            </ul>
+          </div>
         </div>
     
  </nav>

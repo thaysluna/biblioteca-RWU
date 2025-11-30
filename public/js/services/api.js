@@ -3,7 +3,7 @@ import Auth from '../lib/auth.js';
 // public/js/services/api.js
 const domain = '/api';
  
-async function create(resource, data, auth = true) {
+async function create(resource, data, auth = true, formData= false) {
   const url = `${domain}${resource}`;
  
   const config = {

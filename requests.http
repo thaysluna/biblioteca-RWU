@@ -2,6 +2,7 @@
 @host = http://127.0.0.1:3000
 # Variável para armazenar o token JWT após o login
 @token = {{signin.response.body.$.token}}
+@userid = {{userMe.response.body.$.id}}
 
 
 
@@ -30,6 +31,46 @@ Content-Type: application/json
   "password": "12345678"
 "
 }
+
+### read user (with token)
+
+@name userMe
+GET {{host}}/users/me
+
+### Create Image (User)
+
+POST {{host}}/users/image
+Authorization: bearer {{token}}
+Content-Type: multipart/form-data; boundary="boundary"
+
+--boundary
+Content-disposition: form-data; name="userId"
+
+{{createUserId}}
+--boundary
+Content-disposition: form-data; name="image"; filename="avatar.png"
+Content-Type: image/png
+
+< ./public/img/profile/avatar.png
+--boundary--
+
+### Update Image (User)
+
+PUT {{host}}/users/image
+Authorization: bearer {{token}}
+Content-Type: multipart/form-data; boundary="boundary"
+
+--boundary
+Content-disposition: form-data; name="userId"
+
+{{userId}}
+--boundary
+Content-disposition: form-data; name="image"; filename="avatar.png"
+Content-Type: image/png
+
+< ./public/img/profile/avatar.png
+--boundary--
+
 ---
 
 ### 2. Autenticação: Login (POST /signin)

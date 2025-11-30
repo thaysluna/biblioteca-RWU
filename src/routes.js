@@ -12,6 +12,9 @@ import { validate } from './middleware/validate.js';
 import uploadConfig from './config/multer.js';
 import SendMail from './services/SendMail.js';
 import user from './models/user.js';
+import renda from './models/renda.js';
+
+import Image from './models/Image.js';
 
 class HTTPError extends Error {
   constructor(message, code) {
@@ -319,10 +322,10 @@ router.post(
       const userId = req.userId;
  
       if (req.file) {
-        const path = `/imgs/profile/${req.file.filename}`;
- 
+        const path = `/img/profile/${req.file.filename}`;
+
         await Image.create({ userId, path });
- 
+
         res.sendStatus(201);
       } else {
         throw new Error();
@@ -342,10 +345,10 @@ router.put(
       const userId = req.userId;
  
       if (req.file) {
-        const path = `/imgs/profile/${req.file.filename}`;
- 
+        const path = `/img/profile/${req.file.filename}`;
+
         const image = await Image.update({ userId, path });
- 
+
         res.json(image);
       } else {
         throw new Error();
