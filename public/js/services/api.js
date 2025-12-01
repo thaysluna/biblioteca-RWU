@@ -1,5 +1,7 @@
 import Auth from '../lib/auth.js';
  
+const BASE_URL = 'http://localhost:3000'; // Certifique-se de que a porta seja 3000 ou a porta padrão do projeto.
+ 
 // public/js/services/api.js
 const domain = '/api';
  
@@ -99,5 +101,41 @@ async function remove(resource) {
   return true;
 }
  
-export default { create, read, update, remove };
+const API = {
+  async read(endpoint) {
+    const response = await fetch(`${BASE_URL}${endpoint}`);
+    if (!response.ok) {
+      throw new Error(`Erro ao acessar ${endpoint}: ${response.statusText}`);
+    }
+    return response.json();
+  },
+  async create(endpoint, data, isFormData = false, includeCredentials = false) {
+    const options = {
+      method: 'POST',
+      body: isFormData ? data : JSON.stringify(data),
+      headers: isFormData ? {} : { 'Content-Type': 'application/json' },
+    };
+    if (includeCredentials) {
+      options.credentials = 'include';
+    }
+    const response = await fetch(`${BASE_URL}${endpoint}`, options);
+    if (!response.ok) {
+      throw new Error(`Erro ao criar em ${endpoint}: ${response.statusText}`);
+    }
+    return response.json();
+  },
+  async update(endpoint, data, isFormData = false) {
+    const options = {
+      method: 'PUT',
+      body: isFormData ? data : JSON.stringify(data),
+      headers: isFormData ? {} : { 'Content-Type': 'application/json' },
+    };
+    const response = await fetch(`${BASE_URL}${endpoint}`, options);
+    if (!response.ok) {
+      throw new Error(`Erro ao atualizar em ${endpoint}: ${response.statusText}`);
+    }
+    return response.json();
+  },
+};
  
+export default { create, read, update, remove, API };
