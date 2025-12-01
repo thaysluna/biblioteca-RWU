@@ -9,12 +9,6 @@ async function loadProfile() {
   try {
     const user = await API.read('/users/me');
 
-    if (!user || typeof user !== 'object') {
-      throw new Error('Resposta inválida do servidor ao carregar o perfil.');
-    }
-
-    console.log('DEBUG: resposta /users/me ->', user);
-
     let image;
 
     if (user.image && user.image.path) {
@@ -28,17 +22,11 @@ async function loadProfile() {
     document.querySelector('#profile-name').innerText = user.nome || 'Usuário';
     document.querySelector('#user-name').innerText = user.nome || 'Usuário';
     document.querySelector('#profile-email').innerText = user.email || 'Email não informado';
-
-    // Normaliza caminho: se backend devolver caminho começando com '/imgs', converte para '/img'
-    if (image.startsWith('/imgs/')) {
-      image = image.replace('/imgs/', '/img/');
-    }
-
     document.querySelector('#profile-image').src = image;
     document.querySelector('#dropdown-avatar').src = image;
     document.querySelector('#userId').value = user.id || '';
   } catch (error) {
-    console.error('Erro ao carregar perfil:', error.message || error);
+    console.error('Erro ao carregar perfil:', error);
     alert('Não foi possível carregar o perfil. Tente novamente mais tarde.');
   }
 }
@@ -57,16 +45,12 @@ form.onsubmit = async (event) => {
       newImage = await API.update('/users/image', image, true);
     }
  
-    if (!newImage || !newImage.path) {
-      throw new Error('Erro ao atualizar a imagem do perfil.');
-    }
- 
     document.querySelector('#profile-image').src = newImage.path;
     document.querySelector('#dropdown-avatar').src = newImage.path;
  
     form.reset();
   } catch (error) {
-    console.error('Erro ao enviar imagem:', error.message || error);
+    console.error('Erro ao enviar imagem:', error);
     alert('Não foi possível atualizar a imagem. Tente novamente mais tarde.');
   }
 };
