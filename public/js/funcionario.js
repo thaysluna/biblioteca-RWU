@@ -120,29 +120,49 @@ function formatDate(dateString) {
     return `${day}/${month}`;
 }
 
-// Carregar livros existentes ao carregar a página
-async function loadBooks() {
-    try {
-        const response = await fetch('/api/books');
-        if (response.ok) {
-            const books = await response.json();
-            
-            // Limpar container de livros
-            booksContainer.innerHTML = '';
-            
-            // Adicionar cada livro na página
-            books.forEach(book => {
-                addBookToPage(book);
-            });
-        }
-    } catch (error) {
-        console.error('Erro ao carregar livros:', error);
+// Função para buscar livros da API
+async function fetchBooks() {
+  try {
+    const response = await fetch('/api/books'); // Certifique-se de que o endpoint está correto
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar livros: ${response.statusText}`);
     }
+    const books = await response.json();
+    renderBooks(books);
+  } catch (error) {
+    console.error('Erro ao carregar livros:', error);
+    alert('Não foi possível carregar os livros. Tente novamente mais tarde.');
+  }
 }
 
-// Carregar livros quando a página carregar
+// Função para renderizar os livros na página
+function renderBooks(books) {
+  const booksContainer = document.getElementById('booksContainer');
+  booksContainer.innerHTML = ''; // Limpa os livros existentes
+
+  books.forEach((book) => {
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('card');
+
+    bookCard.innerHTML = `
+      <img src="${book.image || 'https://img.icons8.com/ios/250/book.png'}" alt="Capa do livro ${book.title}" />
+      <div class="card-content">
+        <p><strong>${book.title}</strong></p>
+        <p>Autor: ${book.author}</p>
+        <p>Empréstimo: ${book.loanDate || 'N/A'}</p>
+        <p>Entrega: ${book.returnDate || 'N/A'}</p>
+        <form>
+          <button class="update-button" type="button">Atualizar</button>
+        </form>
+      </div>
+    `;
+    booksContainer.appendChild(bookCard);
+  });
+}
+
+// Chamada inicial para carregar os livros
 document.addEventListener('DOMContentLoaded', () => {
-    loadBooks();
+  fetchBooks();
 });
 
 // Adicionar event listener para botões de atualizar (delegação de eventos)
@@ -154,3 +174,4 @@ booksContainer.addEventListener('click', (e) => {
         // Por exemplo, abrir um modal de edição
     }
 });
+
