@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -85,9 +85,9 @@
   <!-- Modal para adicionar livro -->
   <div id="addBookModal" class="modal">
     <div class="modal-content">
-      <span class="close" id="closeModal" aria-label="Fechar Modal">&times;</span>
+      <span class="close" id="closeModal">&times;</span>
       <h2>Adicionar Novo Livro</h2>
-      <form id="addBookForm" enctype="multipart/form-data">
+      <form id="addBookForm">
         <div class="form-group">
           <label for="title">Título do Livro:</label>
           <input type="text" id="title" name="title" required>
@@ -101,8 +101,8 @@
           <textarea id="description" name="description" rows="4" required></textarea>
         </div>
         <div class="form-group">
-          <label for="bookImage">Imagem do Livro:</label>
-          <input type="file" id="bookImage" name="bookImage" accept="image/*" required>
+          <label for="codLivro">Código do Livro:</label>
+          <input type="text" id="codLivro" name="codLivro" placeholder="Ex: 00431495">
         </div>
         <div class="form-group">
           <label for="dataEmprestimo">Data de Empréstimo:</label>
@@ -123,8 +123,8 @@
   <!-- Modal de Sucesso -->
   <div id="successModal" class="modal">
     <div class="modal-content success-content">
-      <span class="close" id="closeSuccessModal" aria-label="Fechar Modal de Sucesso">&times;</span>
-      <div class="success-icon" aria-label="Ícone de Sucesso">✅</div>
+      <span class="close" id="closeSuccessModal">&times;</span>
+      <div class="success-icon">✅</div>
       <h2>Livro Adicionado com Sucesso!</h2>
       <p>O livro foi cadastrado no sistema.</p>
       <button class="btn-ok" id="okBtn">OK</button>
